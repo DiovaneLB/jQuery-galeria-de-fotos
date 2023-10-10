@@ -1,30 +1,22 @@
-$(document).ready(function(){
+document.addEventListener("DOMContentLoaded", function () {
+    const listaTarefas = document.getElementById("lista-tarefas");
+    const novaTarefaInput = document.getElementById("nova-tarefa");
+    const adicionarTarefaBotao = document.getElementById("adicionar-tarefa");
 
-    $('header button').click(function() {
-        $('form').slideDown();
-    })
+    adicionarTarefaBotao.addEventListener("click", function () {
+        const novaTarefaTexto = novaTarefaInput.value.trim();
 
-    $('#botao-cancelar').click(function() {
-        $('form').slideUp();
-    })
+        if (novaTarefaTexto !== "") {
+            const novaTarefaItem = document.createElement("li");
+            novaTarefaItem.textContent = novaTarefaTexto;
 
-    $('form').on('submit', function(e) {
-        e.preventDefault();
-        const enderecoDaNovaImagem = $('#endereco-imagem-nova').val();
-        const novoItem = $('<li style="display: none"></li>');
+            novaTarefaItem.addEventListener("click", function () {
+                novaTarefaItem.classList.toggle("ok"); 
+            });
 
-        $(`<img src="${enderecoDaNovaImagem}" />`).appendTo(novoItem);
-        $(`
-            <div class="overlay-imagem-link" >
-                <a href="${enderecoDaNovaImagem}" target="_blank" title="Ver imagem em tamanho real">
-                    Ver imagem em tamanho real
-                </a>
-            </div>
-        `).appendTo(novoItem);
-        $(novoItem).appendTo('ul');
-            $(novoItem).appendTo('ul');
-            $(novoItem).fadeIn(1000);
-            $('#endereco-imagem-nova').val('')
-    })
-})
+            listaTarefas.appendChild(novaTarefaItem);
 
+            novaTarefaInput.value = "";
+        }
+    });
+});

@@ -3,16 +3,23 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
+    background-color: #e2c5ae;
 }
 
 header {
-    background-color: #5f27cd;
-    padding: 16px 0;
+    align-items: center;
+    background-color: #cd8527;
+    padding: 80px 0;
     color: #fff;
     display: flex;
-    border-bottom: 16px solid #341f97;
-    justify-content: center;
+    border-bottom: 16px solid #974f1f;
     font-style: italic;
+    justify-content: center;
+    align-items: center; 
+}
+
+header h1 {
+    background-color: #cd8527;
 }
 
 header button {
@@ -20,14 +27,15 @@ header button {
 }
 
 form {
-    background-color: #c8d6e5;
-    padding: 24px 0;
+    background-color: #e2c5ae;
+    padding: 80px 0;
     text-align: center;
-    display: none;
 }
 
-form h2 {
-    margin-bottom: 16px;
+form #nova-tarefa {
+    margin-bottom: 32px;
+    background-color: #fff;
+    
 }
 
 input, button {
@@ -35,7 +43,7 @@ input, button {
 }
 
 button {
-    background-color: #009432;
+    background-color: #5f742f;
     border: none;
     cursor: pointer;
     font-weight: bold;
@@ -43,43 +51,11 @@ button {
     color: #fff;
 }
 
-#botao-cancelar {
-    background-color: red;
+
+#lista-container {
+    text-align: center;
 }
 
-ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-ul li {
-    max-width: 25%;
-    list-style: none;
-    position: relative;
-    max-height: 280px;
-    overflow-y: hidden;
-}
-
-ul li img {
-    width: 100%;
-}
-
-.overlay-imagem-link {
-    padding: 16px;
-    background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    transition: all ease .5s;
-}
-
-.overlay-imagem-link a {
-    color: #fff;
-    text-decoration: none;
-}
-
-ul li:hover .overlay-imagem-link {
-    opacity: 1;
+.ok {
+    text-decoration: line-through;
 }
